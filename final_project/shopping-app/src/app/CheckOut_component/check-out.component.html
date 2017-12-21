@@ -1,0 +1,35 @@
+<div style="margin-left:50px" class="container">
+    <h1>Hero Form</h1>
+    <form #myForm = "ngForm" action="https://api.github.com/users/seeschweiler" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="model.name" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="model.email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="payment">Payment</label>
+            <select class="form-control" id="payment" [(ngModel)]="model.payment" required name="payment">
+                <option *ngFor="let payment of payments" [value]="payment">{{payment}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+                <label for="account">Payment Account</label>
+                <input type="text" class="form-control" [(ngModel)]="model.account" id="account" name="account" required>
+        </div>
+
+        <div class="form-group">
+                <label for="phone">Cell Phone</label>
+                <input type="text" class="form-control" [(ngModel)]="model.phone" id="phone" name="phone" required>
+        </div>
+<!--  -->
+        <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+        
+    </form>
+</div>
+<router-outlet></router-outlet>

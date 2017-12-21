@@ -1,0 +1,21 @@
+<div *ngIf="isShow" style="margin-left:40px;border-style:soild;border-width:2px;" class="panel panel-default">
+    <div *ngFor = "let item of productorsList" style = "display:flex;flex-direction:row;flex-grow: 2;height:300px;width:900px" class="panel-body">
+        <div>
+            <img style="width:500px;height:250" class="img-rounded" alt="Responsive image"
+            [src]="item.iamgeURL"
+            >
+        </div>
+        <div class=" text-left" style="display:flex;flex-direction:column;flex-grow: 2;">
+            <h1 style="margin-left:100px">{{item.price}}$</h1>
+            <small class="panel-body" style="height:210px">{{item.description}}
+                </small>
+                <button style = "margin-left:10px" type="button" class="btn btn-default" (click)="gotoRoute(item.product_id)">
+                check out</button>
+
+        </div>
+    </div>
+    
+</div>
+<router-outlet></router-outlet>
+<router-outlet name="popup"></router-outlet>
+

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="jumbotron">
+      <h1>Welcome</h1>
+      <h2>Welcome to my store!</h2>
+    </div>
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading flex-container" style = "display:flex;flex-direction:row;flex-grow: 1;">
+        <div>
+            <span>Productors</span>
+        </div>
+          <div>
+              <button disabled="disabled" class="glyphicon glyphicon-home"></button>
+          </div>
+        
+      </div>
+    </div>
+    <div style = "display:flex;flex-direction:row;flex-grow: 2;">
+        <div class="btn-group-vertical" role="group" aria-label="..." style="position: fixed;" data-toggle="buttons">
+            <button class="btn btn-primary"  *ngFor="let category of categorys"  (click)="chooesCategory(category)" 
+                type="button" >
+                {{category.category_name}}
+            </button>
+        </div>
+        <div *ngIf = "isShow" style="margin-left:110px">
+            <product-List [showIs]='showIs' [productorList]="productors" ></product-List>
+        </div>
+      </div>
+    
+  </div>
